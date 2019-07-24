@@ -137,7 +137,6 @@ class IlluminateUserRepositoryTest extends PHPUnit_Framework_TestCase
     {
         list($users, $hasher, $model, $query) = $this->getUsersMock();
 
-        $model->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $model->getConnection()->getPostProcessor()->shouldReceive('processInsertGetId')->once();
 
         $users->recordLogin($model);
@@ -147,7 +146,6 @@ class IlluminateUserRepositoryTest extends PHPUnit_Framework_TestCase
     {
         list($users, $hasher, $model, $query) = $this->getUsersMock();
 
-        $model->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $model->getConnection()->getPostProcessor()->shouldReceive('processInsertGetId')->once();
 
         $users->recordLogout($model);
@@ -254,7 +252,6 @@ class IlluminateUserRepositoryTest extends PHPUnit_Framework_TestCase
     {
         list($users, $hasher, $model, $query) = $this->getUsersMock();
 
-        $model->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $model->getConnection()->getPostProcessor()->shouldReceive('processInsertGetId')->once();
 
         $hasher->shouldReceive('hash')->once()->with('secret')->andReturn(password_hash('secret', PASSWORD_DEFAULT));
@@ -271,7 +268,6 @@ class IlluminateUserRepositoryTest extends PHPUnit_Framework_TestCase
     {
         list($users, $hasher, $model, $query) = $this->getUsersMock();
 
-        $model->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $model->getConnection()->getPostProcessor()->shouldReceive('processInsertGetId')->once();
 
         $hasher->shouldReceive('hash')->once()->with('secret')->andReturn(password_hash('secret', PASSWORD_DEFAULT));
@@ -289,8 +285,6 @@ class IlluminateUserRepositoryTest extends PHPUnit_Framework_TestCase
     public function testCreateWithInvalidCallback()
     {
         list($users, $hasher, $model, $query) = $this->getUsersMock();
-
-        $model->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
 
         $hasher->shouldReceive('hash')->once()->with('secret')->andReturn(password_hash('secret', PASSWORD_DEFAULT));
 
@@ -310,7 +304,6 @@ class IlluminateUserRepositoryTest extends PHPUnit_Framework_TestCase
 
         $model->setConnectionResolver($resolver = m::mock('Illuminate\Database\ConnectionResolverInterface'));
         $resolver->shouldReceive('connection')->andReturn(m::mock('Illuminate\Database\Connection')->makePartial());
-        $model->getConnection()->shouldReceive('getName');
         $model->getConnection()->shouldReceive('getQueryGrammar')->andReturn(m::mock('Illuminate\Database\Query\Grammars\Grammar'));
         $model->getConnection()->shouldReceive('getPostProcessor')->andReturn($processor = m::mock('Illuminate\Database\Query\Processors\Processor'));
 

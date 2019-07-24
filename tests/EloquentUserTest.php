@@ -104,7 +104,6 @@ class EloquentUserTest extends PHPUnit_Framework_TestCase
 
         $user->setConnectionResolver($resolver = m::mock('Illuminate\Database\ConnectionResolverInterface'));
         $resolver->shouldReceive('connection')->andReturn(m::mock('Illuminate\Database\Connection')->makePartial());
-        $user->getConnection()->shouldReceive('getName');
         $user->getConnection()->shouldReceive('getQueryGrammar')->andReturn(m::mock('Illuminate\Database\Query\Grammars\Grammar'));
         $user->getConnection()->shouldReceive('getPostProcessor')->andReturn($processor = m::mock('Illuminate\Database\Query\Processors\Processor'));
         $user->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
@@ -124,7 +123,6 @@ class EloquentUserTest extends PHPUnit_Framework_TestCase
 
         $user->setConnectionResolver($resolver = m::mock('Illuminate\Database\ConnectionResolverInterface'));
         $resolver->shouldReceive('connection')->andReturn(m::mock('Illuminate\Database\Connection')->makePartial());
-        $user->getConnection()->shouldReceive('getName');
         $user->getConnection()->shouldReceive('getQueryGrammar')->andReturn(m::mock('Illuminate\Database\Query\Grammars\Grammar'));
         $user->getConnection()->shouldReceive('getPostProcessor')->andReturn($processor = m::mock('Illuminate\Database\Query\Processors\Processor'));
         $user->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
@@ -178,10 +176,8 @@ class EloquentUserTest extends PHPUnit_Framework_TestCase
 
         $user->setConnectionResolver($resolver = m::mock('Illuminate\Database\ConnectionResolverInterface'));
         $resolver->shouldReceive('connection')->andReturn(m::mock('Illuminate\Database\Connection')->makePartial());
-        $user->getConnection()->shouldReceive('getName');
         $user->getConnection()->shouldReceive('getQueryGrammar')->andReturn(m::mock('Illuminate\Database\Query\Grammars\Grammar'));
         $user->getConnection()->shouldReceive('getPostProcessor')->andReturn($processor = m::mock('Illuminate\Database\Query\Processors\Processor'));
-        $user->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $user->getConnection()->getQueryGrammar()->shouldReceive('compileInsertGetId');
         $processor->shouldReceive('processSelect')->andReturn([
             [
@@ -211,10 +207,8 @@ class EloquentUserTest extends PHPUnit_Framework_TestCase
 
         $user->setConnectionResolver($resolver = m::mock('Illuminate\Database\ConnectionResolverInterface'));
         $resolver->shouldReceive('connection')->andReturn(m::mock('Illuminate\Database\Connection')->makePartial());
-        $user->getConnection()->shouldReceive('getName');
         $user->getConnection()->shouldReceive('getQueryGrammar')->andReturn(m::mock('Illuminate\Database\Query\Grammars\Grammar'));
         $user->getConnection()->shouldReceive('getPostProcessor')->andReturn($processor = m::mock('Illuminate\Database\Query\Processors\Processor'));
-        $user->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $user->getConnection()->getQueryGrammar()->shouldReceive('compileInsertGetId');
         $processor->shouldReceive('processSelect')->andReturn([
             [

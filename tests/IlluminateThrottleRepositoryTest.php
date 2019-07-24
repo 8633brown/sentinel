@@ -72,7 +72,6 @@ class IlluminateThrottleRepositoryTest extends PHPUnit_Framework_TestCase
         $models->shouldReceive('count')->andReturn(6);
         $models->shouldReceive('first')->andReturn($first = new EloquentThrottle);
 
-        $first->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $first->created_at = Carbon::createFromTimestamp(time());
 
         $this->assertEquals(10, $throttle->globalDelay(), '', 3);
@@ -97,7 +96,6 @@ class IlluminateThrottleRepositoryTest extends PHPUnit_Framework_TestCase
         $models->shouldReceive('count')->andReturn(6);
         $models->shouldReceive('first')->andReturn($first = new EloquentThrottle);
 
-        $first->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $first->created_at = Carbon::createFromTimestamp(time());
 
         $this->assertEquals(0, $throttle->globalDelay(), '', 3);
@@ -122,7 +120,6 @@ class IlluminateThrottleRepositoryTest extends PHPUnit_Framework_TestCase
         $models->shouldReceive('count')->andReturn(6);
         $models->shouldReceive('last')->andReturn($last = new EloquentThrottle);
 
-        $last->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $last->created_at = Carbon::createFromTimestamp(time());
 
         $this->assertEquals(3, $throttle->globalDelay(), '', 3);
@@ -147,7 +144,6 @@ class IlluminateThrottleRepositoryTest extends PHPUnit_Framework_TestCase
         $models->shouldReceive('count')->andReturn(11);
         $models->shouldReceive('last')->andReturn($last = new EloquentThrottle);
 
-        $last->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $last->created_at = Carbon::createFromTimestamp(time());
 
         $this->assertEquals(10, $throttle->globalDelay(), '', 3);
@@ -172,7 +168,6 @@ class IlluminateThrottleRepositoryTest extends PHPUnit_Framework_TestCase
         $models->shouldReceive('count')->andReturn(11);
         $models->shouldReceive('last')->andReturn($last = new EloquentThrottle);
 
-        $last->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $last->created_at = Carbon::createFromTimestamp(time() - 200);
 
         $this->assertEquals(0, $throttle->globalDelay(), '', 3);
@@ -198,7 +193,6 @@ class IlluminateThrottleRepositoryTest extends PHPUnit_Framework_TestCase
         $models->shouldReceive('count')->andReturn(6);
         $models->shouldReceive('first')->andReturn($first = new EloquentThrottle);
 
-        $first->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $first->created_at = Carbon::createFromTimestamp(time());
 
         $this->assertEquals(10, $throttle->ipDelay('127.0.0.1'), '', 3);
@@ -224,7 +218,6 @@ class IlluminateThrottleRepositoryTest extends PHPUnit_Framework_TestCase
         $models->shouldReceive('count')->andReturn(6);
         $models->shouldReceive('last')->andReturn($last = new EloquentThrottle);
 
-        $last->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $last->created_at = Carbon::createFromTimestamp(time());
 
         $this->assertEquals(3, $throttle->ipDelay('127.0.0.1'), '', 3);
@@ -250,7 +243,6 @@ class IlluminateThrottleRepositoryTest extends PHPUnit_Framework_TestCase
         $models->shouldReceive('count')->andReturn(11);
         $models->shouldReceive('last')->andReturn($last = new EloquentThrottle);
 
-        $last->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $last->created_at = Carbon::createFromTimestamp(time());
 
         $this->assertEquals(10, $throttle->ipDelay('127.0.0.1'), '', 3);
@@ -276,7 +268,6 @@ class IlluminateThrottleRepositoryTest extends PHPUnit_Framework_TestCase
         $models->shouldReceive('count')->andReturn(6);
         $models->shouldReceive('first')->andReturn($first = new EloquentThrottle);
 
-        $first->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $first->created_at = Carbon::createFromTimestamp(time());
 
         $user = m::mock('Cartalyst\Sentinel\Users\UserInterface');
@@ -305,7 +296,6 @@ class IlluminateThrottleRepositoryTest extends PHPUnit_Framework_TestCase
         $models->shouldReceive('count')->andReturn(6);
         $models->shouldReceive('last')->andReturn($last = new EloquentThrottle);
 
-        $last->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $last->created_at = Carbon::createFromTimestamp(time());
 
         $user = m::mock('Cartalyst\Sentinel\Users\UserInterface');
@@ -334,7 +324,6 @@ class IlluminateThrottleRepositoryTest extends PHPUnit_Framework_TestCase
         $models->shouldReceive('count')->andReturn(11);
         $models->shouldReceive('last')->andReturn($last = new EloquentThrottle);
 
-        $last->getConnection()->getQueryGrammar()->shouldReceive('getDateFormat')->andReturn('Y-m-d H:i:s');
         $last->created_at = Carbon::createFromTimestamp(time());
 
         $user = m::mock('Cartalyst\Sentinel\Users\UserInterface');
