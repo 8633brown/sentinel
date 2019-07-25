@@ -1,6 +1,7 @@
 # Sentinel
 
-[![Travis (.com) branch](https://img.shields.io/travis/com/8633brown/sentinel/dev.svg)](https://travis-ci.com/8633brown/sentinel)
+[![Travis (.com) branch](https://img.shields.io/travis/com/8633brown/sentinel/new.svg)](https://travis-ci.com/8633brown/sentinel)
+[![Coveralls github branch](https://img.shields.io/coveralls/github/8633brown/sentinel/new.svg)](https://coveralls.io/github/8633brown/sentinel)
 
 Sentinel is a PHP 5.4+ fully-featured authentication & authorization system. It also provides additional features such as user roles and additional security features.
 
