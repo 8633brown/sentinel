@@ -20,4 +20,7 @@ matrix:
 install:
   - composer install --prefer-source
 
-script: vendor/bin/phpunit
+script: vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+after_script:
+    - vendor/bin/php-coveralls --coverage_clover build/logs/clover.xml

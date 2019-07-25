@@ -33,6 +33,7 @@
         "mockery/mockery": "~0.9",
         "paragonie/random_compat": "^1.4|^2",
         "phpunit/phpunit": "~5.0"
+        "php-coveralls/php-coveralls": "^2.0"
     },
     "suggest": {
         "illuminate/database": "By default, Sentinel utilizes the powerful Illuminate database layer.",
