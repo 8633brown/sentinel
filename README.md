@@ -1,6 +1,7 @@
 # Sentinel
 
 [![Build Status][icon-travis]][link-travis]
+[![Code Coverage][icon-coveralls]][link-coveralls]
 [![Software License][icon-license]][link-license]
 [![Latest Version on Packagist][icon-version]][link-packagist]
 [![Total Downloads][icon-downloads]][link-packagist]
@@ -39,11 +40,13 @@ If you discover any security related issues, please email help@cartalyst.com ins
 This software is released under the [BSD 3-Clause](LICENSE) License.
 
 [link-docs]:      https://cartalyst.com/manual/sentinel
-[link-travis]:    https://travis-ci.org/cartalyst/sentinel
+[link-travis]:    https://travis-ci.com/8633brown/sentinel
+[link-coveralls]: https://coveralls.io/github/8633brown/sentinel
 [link-license]:   https://opensource.org/licenses/MIT
 [link-packagist]: https://packagist.org/packages/cartalyst/sentinel
 
-[icon-travis]:    https://travis-ci.org/cartalyst/sentinel.svg?branch=3.0
+[icon-travis]:    https://img.shields.io/travis/com/8633brown/sentinel/dev
+[icon-coveralls]: https://img.shields.io/coveralls/github/8633brown/sentinel/dev
 [icon-license]:   https://poser.pugx.org/cartalyst/sentinel/license
 [icon-version]:   https://poser.pugx.org/cartalyst/sentinel/version
 [icon-downloads]: https://poser.pugx.org/cartalyst/sentinel/downloads

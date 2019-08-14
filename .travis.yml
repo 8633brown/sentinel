@@ -15,4 +15,8 @@ install:
   - travis_retry composer install --no-interaction --prefer-dist
 
 script:
-  - vendor/bin/phpunit --verbose
+  - if [[ "$TRAVIS_PHP_VERSION" == '7.3' ]]; then vendor/bin/phpunit --verbose --coverage-clover build/logs/clover.xml; fi
+  - if [[ "$TRAVIS_PHP_VERSION" != '7.3' ]]; then vendor/bin/phpunit --verbose; fi
+
+after_script:
+  - if [[ "$TRAVIS_PHP_VERSION" == '7.3' ]]; then vendor/bin/php-coveralls -v --coverage_clover build/logs/clover.xml; fi
